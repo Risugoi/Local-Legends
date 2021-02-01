@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/openScreen.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 import 'package:local_legends/database/customerdb.dart';
@@ -84,6 +85,10 @@ class _customerHome extends State<customerHome> {
               ),
               ListTile(
                 title: Text('Signout'),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => openScreen()));
+                },
               ),
             ],
           ),

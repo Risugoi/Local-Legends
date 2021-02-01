@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:local_legends/database/dbHelper.dart';
 import 'package:local_legends/database/feeddb.dart';
 import 'package:local_legends/database/indivInfo.dart';
+import 'package:local_legends/openScreen.dart';
 import 'package:local_legends/styles/styles.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
@@ -79,7 +80,7 @@ class _resLogin extends State<resLogin> {
                                   width: 300,
                                   child: TextFormField(
                                     controller: _passwordCon,
-                                    keyboardType: TextInputType.phone,
+                                    keyboardType: TextInputType.text,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       contentPadding: EdgeInsets.only(
@@ -941,6 +942,11 @@ class _resSignup2 extends State<resSignup2> {
                                         _insertAccount();
                                         _insertFeed();
                                         _insertIndivInfo();
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    openScreen()));
                                       },
                                     ),
                                   ),
