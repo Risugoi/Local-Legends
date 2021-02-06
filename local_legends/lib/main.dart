@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/customerLogin.dart';
 import 'package:local_legends/database/customerdb.dart';
 import 'package:local_legends/database/dbHelper.dart';
 import 'package:local_legends/database/feeddb.dart';
 import 'package:local_legends/openScreen.dart';
-import 'package:local_legends/restaurantLogin.dart';
+import 'package:local_legends/merchantLogin.dart';
 import 'package:local_legends/customerHome.dart';
 
 void main() {
@@ -30,7 +31,9 @@ class Home extends StatelessWidget {
     WidgetsBinding.instance.addPersistentFrameCallback(
         (_) => customerdb.createInstance().createAccountStorageTable());
 
-    return openScreen();
+    //return openScreen();
     //return resSignup1();
+    //return customerLogin();
+    return resLogin();
   }
 }

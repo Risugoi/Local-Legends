@@ -5,6 +5,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 import 'package:local_legends/customerHome.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:local_legends/customerReserveScreen.dart';
 
 class restaurantDisplay extends StatefulWidget {
   final List resDetails;
@@ -135,7 +136,18 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                                   left: 20, right: 20, top: 10, bottom: 10),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0)),
-                              onPressed: () {})),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => restoReservation(
+                                              restoName: widget
+                                                  .resDetails[0].values
+                                                  .elementAt(0),
+                                              restoDetails: widget.resDetails,
+                                              email: widget.email,
+                                            )));
+                              })),
                     ],
                   ))),
                 ),

@@ -204,12 +204,14 @@ class customerSignup extends StatefulWidget {
 class _customerSignup extends State<customerSignup> {
   String name;
   String email;
+  String bday;
   String password;
   String confirmPassword;
 
   //controllers
   final _nameCon = new TextEditingController();
   final _emailCon = new TextEditingController();
+  final _bdayCon = new TextEditingController();
   final _passwordCon = new TextEditingController();
   final _confirmPassCon = new TextEditingController();
 
@@ -306,6 +308,30 @@ class _customerSignup extends State<customerSignup> {
                               height: 40,
                               width: 300,
                               child: TextFormField(
+                                controller: _bdayCon,
+                                keyboardType: TextInputType.datetime,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.only(
+                                      top: 2.0, bottom: 2.0, left: 1.0),
+                                  hintText: 'Birthday (MM/DD/YYYY)',
+                                ),
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Bday is required';
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              decoration: textBox,
+                              height: 40,
+                              width: 300,
+                              child: TextFormField(
                                 controller: _passwordCon,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
@@ -361,6 +387,7 @@ class _customerSignup extends State<customerSignup> {
                                 onPressed: () {
                                   name = _nameCon.text;
                                   email = _emailCon.text;
+                                  bday = _bdayCon.text;
                                   password = _passwordCon.text;
                                   confirmPassword = _confirmPassCon.text;
                                   if (password == confirmPassword) {
@@ -391,7 +418,7 @@ class _customerSignup extends State<customerSignup> {
   _insertAccount() async {
     Database db = await customerdb.createInstance().insertInfo();
     Map<String, dynamic> toMap() =>
-        {"name": name, "email": email, "password": password};
+        {"name": name, "email": email, "bday": bday, "password": password};
     return await db.insert(customerdb.table1, toMap());
   }
 }

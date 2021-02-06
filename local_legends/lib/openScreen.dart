@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_legends/customerLogin.dart';
-import 'package:local_legends/restaurantLogin.dart';
+import 'package:local_legends/merchantLogin.dart';
 
 class openScreen extends StatefulWidget {
   @override

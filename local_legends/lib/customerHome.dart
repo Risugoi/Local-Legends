@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/customerListReservations.dart';
 import 'package:local_legends/openScreen.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 import 'package:local_legends/database/customerdb.dart';
 import 'package:local_legends/database/feeddb.dart';
 import 'package:local_legends/restaurant.dart';
+import 'package:local_legends/customerProfile.dart';
+import 'package:local_legends/customerSettings.dart';
 
 class customerHome extends StatefulWidget {
   final String email;
@@ -76,12 +79,35 @@ class _customerHome extends State<customerHome> {
               ),
               ListTile(
                 title: Text('Profile'),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => customerProfile(
+                                email: widget.email,
+                              )));
+                },
               ),
               ListTile(
-                title: Text('Reservations'),
-              ),
+                  title: Text('Reservations'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => listOfReserve(
+                                  email: widget.email,
+                                )));
+                  }),
               ListTile(
-                title: Text('Favorites'),
+                title: Text('Settings'),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => customerSettings(
+                                email: widget.email,
+                              )));
+                },
               ),
               ListTile(
                 title: Text('Signout'),
