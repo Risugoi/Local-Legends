@@ -10,6 +10,7 @@ class dbHelper {
 
   //columns inside the table
   static final email = "email";
+  static final name = "name";
   static final password = "password";
 
 //create login table
@@ -19,7 +20,8 @@ class dbHelper {
   }
 
   void _onCreate(Database db, int newVersion) async {
-    await db.execute("CREATE TABLE IF NOT EXISTS $table1(email, password)");
+    await db
+        .execute("CREATE TABLE IF NOT EXISTS $table1(email, name, password)");
   }
 
 //signup

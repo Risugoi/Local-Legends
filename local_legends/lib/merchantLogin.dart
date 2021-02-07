@@ -170,6 +170,7 @@ class _resLogin extends State<resLogin> {
     List<Map> results = await db.rawQuery(
         "SELECT COUNT(*) FROM ${dbHelper.table1} WHERE ${dbHelper.email}='$_email'");
     if (getNum == 0) {
+      loginError();
     } else {
       int userCount = results[0].values.elementAt(0);
       if (userCount > 0) {
@@ -973,7 +974,7 @@ class _resSignup2 extends State<resSignup2> {
   _insertAccount() async {
     Database db = await dbHelper.createInstance().insertInfo();
     Map<String, dynamic> toMap() =>
-        {"email": _privEmail, "password": _password};
+        {"email": _privEmail, "name": _resName, "password": _password};
     return await db.insert(dbHelper.table1, toMap());
   }
 

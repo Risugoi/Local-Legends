@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=D:\flutter
-FLUTTER_APPLICATION_PATH=E:\Softeng\local_legends
+FLUTTER_APPLICATION_PATH=E:\git1\SoftEng-Project\Local-Legends\local_legends
 FLUTTER_TARGET=lib\main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build\ios

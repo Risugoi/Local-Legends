@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/merchantListReservation.dart';
 import 'package:local_legends/merchantReserveTimeSlot.dart';
 import 'package:local_legends/styles/styles.dart';
 import 'package:sqflite/sqflite.dart';
@@ -66,7 +67,20 @@ class _merchantHome extends State<merchantHome> {
                                 )));
                   },
                 ),
-                ListTile(title: Text('Reservations'), onTap: () {}),
+                ListTile(
+                    title: Text('Reservations'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => merchantReserve(
+                                    email: widget.email,
+                                    /*
+                                  name: widget.resDetails[0].values
+                                      .elementAt(0)
+                                      */
+                                  )));
+                    }),
                 ListTile(
                   title: Text('Settings'),
                   onTap: () {},
@@ -97,12 +111,12 @@ class _merchantHome extends State<merchantHome> {
                       ),
                       SizedBox(height: 20),
                       Container(
-                          padding: EdgeInsets.only(
-                              top: 35, bottom: 10, left: 35, right: 45),
-                          alignment: Alignment(-1, -1),
-                          child: Text('Resto Name')
-                          //Text(widget.resDetails[0].values.elementAt(0)),
-                          ),
+                        padding: EdgeInsets.only(
+                            top: 35, bottom: 10, left: 35, right: 45),
+                        alignment: Alignment(-1, -1),
+                        child: Text(
+                            'Resto Name'), //Text(widget.resDetails[0].values.elementAt(0)),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
