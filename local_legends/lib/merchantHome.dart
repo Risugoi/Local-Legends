@@ -30,10 +30,6 @@ class _merchantHome extends State<merchantHome> {
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
           appBar: AppBar(
-            title: Text(
-              "RestoName",
-              style: TextStyle(color: Colors.black),
-            ),
             iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -49,8 +45,8 @@ class _merchantHome extends State<merchantHome> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            child: Text('Resto Name'),
-                          ),
+                              child: Text(
+                                  widget.resDetails[0].values.elementAt(0))),
                         ],
                       ),
                     ),
@@ -63,6 +59,7 @@ class _merchantHome extends State<merchantHome> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => reserveTimeSlot(
+                                  resDetails: widget.resDetails,
                                   email: widget.email,
                                 )));
                   },
@@ -74,6 +71,7 @@ class _merchantHome extends State<merchantHome> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => merchantReserve(
+                                    resDetails: widget.resDetails,
                                     email: widget.email,
                                     /*
                                   name: widget.resDetails[0].values
@@ -114,8 +112,7 @@ class _merchantHome extends State<merchantHome> {
                         padding: EdgeInsets.only(
                             top: 35, bottom: 10, left: 35, right: 45),
                         alignment: Alignment(-1, -1),
-                        child: Text(
-                            'Resto Name'), //Text(widget.resDetails[0].values.elementAt(0)),
+                        child: Text(widget.resDetails[0].values.elementAt(0)),
                       ),
                       SizedBox(
                         height: 20,
@@ -123,38 +120,28 @@ class _merchantHome extends State<merchantHome> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text('PP'),
-                          Text('Time'),
-                          Text('Delivery')
-                          /*
                           Text(widget.resDetails[0].values.elementAt(15)),
                           Text(widget.resDetails[0].values.elementAt(14)),
                           Text(widget.resDetails[0].values.elementAt(13))
-                          */
                         ],
                       ),
                       SizedBox(
                         height: 30,
                       ),
                       Container(
-                          padding: EdgeInsets.only(
-                              top: 35, bottom: 10, left: 35, right: 45),
-                          alignment: Alignment(-1, -1),
-                          child: Text('address')
-                          //Text(widget.resDetails[0].values.elementAt(2)),
-                          ),
+                        padding: EdgeInsets.only(
+                            top: 35, bottom: 10, left: 35, right: 45),
+                        alignment: Alignment(-1, -1),
+                        child: Text(widget.resDetails[0].values.elementAt(2)),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text('Phone Num'),
-                          Text('Email')
-                          /*
                           Text(widget.resDetails[0].values.elementAt(6)),
                           Text(widget.resDetails[0].values.elementAt(4)),
-                          */
                         ],
                       ),
                       SizedBox(height: 50),
@@ -162,9 +149,8 @@ class _merchantHome extends State<merchantHome> {
                           decoration: textBox,
                           height: 80,
                           width: 300,
-                          child: Text('Description')
-                          //Text(widget.resDetails[0].values.elementAt(5))
-                          ),
+                          child:
+                              Text(widget.resDetails[0].values.elementAt(5))),
                       SizedBox(
                         height: 30,
                       ),

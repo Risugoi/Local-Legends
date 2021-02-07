@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/database/customerdb.dart';
 import 'package:local_legends/database/dbHelper.dart';
 import 'package:local_legends/database/feeddb.dart';
 import 'package:local_legends/database/indivInfo.dart';
@@ -179,11 +180,23 @@ class _resLogin extends State<resLogin> {
         String checkPass = registeredpassword[0].values.elementAt(0).toString();
 
         if (checkPass == _password) {
+          List<Map> restoName = await db.rawQuery(
+              "SELECT ${dbHelper.name} FROM ${dbHelper.table1} WHERE ${dbHelper.email} = '$_email'");
+          String name = restoName[0].values.toString();
+          name = name.substring(1, name.length - 1);
+
+          String path2 = p.join(await getDatabasesPath(), '$name.db');
+          var db2 = await openDatabase(path2);
+          List<Map> info = await db2.rawQuery("SELECT * FROM RestaurantInfo");
+          List _restoInfo = info.toList();
+          // print(_restoInfo);
+
           //passwordmatch
           Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => merchantHome(
+                        resDetails: _restoInfo,
                         email: _email,
                       )));
         } else {

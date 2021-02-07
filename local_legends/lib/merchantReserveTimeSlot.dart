@@ -5,7 +5,9 @@ import 'package:local_legends/styles/styles.dart';
 
 class reserveTimeSlot extends StatefulWidget {
   final String email;
-  const reserveTimeSlot({Key key, this.email}) : super(key: key);
+  final List resDetails;
+  const reserveTimeSlot({Key key, this.resDetails, this.email})
+      : super(key: key);
 
   @override
   _reserveTimeSlot createState() => _reserveTimeSlot();
@@ -25,8 +27,9 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              merchantHome(email: widget.email)));
+                          builder: (context) => merchantHome(
+                              resDetails: widget.resDetails,
+                              email: widget.email)));
                 })),
         body: AnnotatedRegion(
           value: SystemUiOverlayStyle.light,

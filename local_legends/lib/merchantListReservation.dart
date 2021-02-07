@@ -7,7 +7,9 @@ import 'package:sqflite/sqflite.dart';
 
 class merchantReserve extends StatefulWidget {
   final String email;
-  const merchantReserve({Key key, this.email}) : super(key: key);
+  final List resDetails;
+  const merchantReserve({Key key, this.resDetails, this.email})
+      : super(key: key);
 
   @override
   _merchantReserve createState() => _merchantReserve();
@@ -36,6 +38,7 @@ class _merchantReserve extends State<merchantReserve> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => merchantHome(
+                                  resDetails: widget.resDetails,
                                   email: widget.email,
                                 )));
                   }),
