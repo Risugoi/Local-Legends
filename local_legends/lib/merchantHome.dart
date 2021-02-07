@@ -73,6 +73,8 @@ class _merchantHome extends State<merchantHome> {
                           MaterialPageRoute(
                               builder: (context) => merchantReserve(
                                     resDetails: widget.resDetails,
+                                    name: widget.resDetails[0].values
+                                        .elementAt(0),
                                     email: widget.email,
                                     /*
                                   name: widget.resDetails[0].values

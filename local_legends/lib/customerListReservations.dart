@@ -17,7 +17,7 @@ class listOfReserve extends StatefulWidget {
 class _listOfReserve extends State<listOfReserve> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   List _reserveList = [];
-  int _n;
+  int _n = 0;
   @override
   void initState() {
     super.initState();
@@ -26,7 +26,6 @@ class _listOfReserve extends State<listOfReserve> {
 
   @override
   Widget build(BuildContext context) {
-    _n = _reserveList.length;
     print(_reserveList);
     print(_n);
 
@@ -60,10 +59,10 @@ class _listOfReserve extends State<listOfReserve> {
                     children: <Widget>[
                       Text(_reserveList[index]
                           .values
-                          .elementAt(3)
+                          .elementAt(4)
                           .toString()
                           .substring(0, 11)),
-                      Text(_reserveList[index].values.elementAt(4)),
+                      Text(_reserveList[index].values.elementAt(5)),
                     ],
                   ),
                   trailing: RaisedButton(
@@ -80,6 +79,7 @@ class _listOfReserve extends State<listOfReserve> {
       List reserveDetails = await _getReservationInfo();
       setState(() {
         _reserveList = reserveDetails;
+        _n = _reserveList.length;
       });
     } catch (e) {
       print('error');

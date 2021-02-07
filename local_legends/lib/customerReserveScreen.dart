@@ -7,9 +7,9 @@ import 'package:local_legends/database/customerdb.dart';
 
 class restoReservation extends StatefulWidget {
   final List restoDetails;
-  final String restoName, email;
+  final String restoName, name, email;
   const restoReservation(
-      {Key key, this.restoName, this.restoDetails, this.email})
+      {Key key, this.restoName, this.name, this.restoDetails, this.email})
       : super(key: key);
 
   @override
@@ -251,6 +251,7 @@ class _restoReservation extends State<restoReservation> {
     Database db = await customerdb.createInstance().insertInfo();
     Map<String, dynamic> toMap() => {
           "Restoname": widget.restoName,
+          "customerName": widget.name,
           "customerEmail": widget.email,
           "seats": _num.toString(),
           "date": selectedDate.toString(),

@@ -145,7 +145,9 @@ class _customerHome extends State<customerHome> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => restaurantDisplay(
-                            resDetails: _restoDetails, email: widget.email)));
+                            resDetails: _restoDetails,
+                            name: _name,
+                            email: widget.email)));
               },
             );
           },

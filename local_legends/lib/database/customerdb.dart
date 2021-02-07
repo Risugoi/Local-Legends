@@ -17,6 +17,7 @@ class customerdb {
 
   //columns inside the reserve table
   static final restoName = 'restoName';
+  static final customerName = 'customerName';
   static final customerEmail = 'customerEmail';
   static final seats = 'seats';
   static final date = 'date';
@@ -32,7 +33,7 @@ class customerdb {
     await db.execute(
         "CREATE TABLE IF NOT EXISTS $table1(name, email, bday, password)");
     await db.execute(
-        "CREATE TABLE IF NOT EXISTS $table2(RestoName, customerEmail, seats, date, time)");
+        "CREATE TABLE IF NOT EXISTS $table2(RestoName, customerName, customerEmail, seats, date, time)");
   }
 
 //insert to database

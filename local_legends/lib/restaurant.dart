@@ -9,8 +9,8 @@ import 'package:local_legends/customerReserveScreen.dart';
 
 class restaurantDisplay extends StatefulWidget {
   final List resDetails;
-  final String email;
-  const restaurantDisplay({Key key, this.resDetails, this.email})
+  final String email, name;
+  const restaurantDisplay({Key key, this.resDetails, this.name, this.email})
       : super(key: key);
 
   @override
@@ -140,6 +140,7 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                                                   .resDetails[0].values
                                                   .elementAt(0),
                                               restoDetails: widget.resDetails,
+                                              name: widget.name,
                                               email: widget.email,
                                             )));
                               })),
