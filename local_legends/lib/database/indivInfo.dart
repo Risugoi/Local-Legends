@@ -6,6 +6,7 @@ class indivInfo {
   indivInfo.createInstance();
   //table name
   static final table = "RestaurantInfo";
+  static final table2 = "Reservation";
 
   //columns inside the table
   static final restaurantName = "restaurantName";
@@ -24,6 +25,8 @@ class indivInfo {
   static final delivery = "delivery";
   static final timeOpen = "timeOpen";
   static final price = "price";
+
+  //columns inside reserve table
 
   Future<Database> insertInfo(String resName) async {
     String path = p.join(await getDatabasesPath(), '$resName.db');

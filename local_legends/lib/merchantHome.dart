@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/merchantReserveTimeSlot.dart';
 import 'package:local_legends/styles/styles.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
@@ -56,7 +57,14 @@ class _merchantHome extends State<merchantHome> {
                 ),
                 ListTile(
                   title: Text('Reservation Time Slots'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => reserveTimeSlot(
+                                  email: widget.email,
+                                )));
+                  },
                 ),
                 ListTile(title: Text('Reservations'), onTap: () {}),
                 ListTile(

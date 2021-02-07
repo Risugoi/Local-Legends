@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:local_legends/styles/styles.dart';
 import 'package:local_legends/restaurant.dart';
+import 'package:local_legends/database/customerdb.dart';
 
 class restoReservation extends StatefulWidget {
   final List restoDetails;
@@ -18,6 +20,8 @@ class _restoReservation extends State<restoReservation> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   int _num = 0;
   DateTime selectedDate = DateTime.now();
+  String time = '';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +54,7 @@ class _restoReservation extends State<restoReservation> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Text('Resto Name'),
+                        child: Text(widget.restoName),
                       ),
                       SizedBox(
                         height: 20,
@@ -103,15 +107,27 @@ class _restoReservation extends State<restoReservation> {
                                 Row(
                                   children: <Widget>[
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '10AM';
+                                        });
+                                      },
                                       child: Text('10AM'),
                                     ),
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '11AM';
+                                        });
+                                      },
                                       child: Text('11AM'),
                                     ),
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '1PM';
+                                        });
+                                      },
                                       child: Text('1PM'),
                                     ),
                                   ],
@@ -119,15 +135,27 @@ class _restoReservation extends State<restoReservation> {
                                 Row(
                                   children: <Widget>[
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '2PM';
+                                        });
+                                      },
                                       child: Text('2PM'),
                                     ),
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '3PM';
+                                        });
+                                      },
                                       child: Text('3PM'),
                                     ),
                                     RaisedButton(
-                                      onPressed: null,
+                                      onPressed: () {
+                                        setState(() {
+                                          time = '4PM';
+                                        });
+                                      },
                                       child: Text('4PM'),
                                     ),
                                   ],
@@ -153,7 +181,12 @@ class _restoReservation extends State<restoReservation> {
                             SizedBox(height: 20),
                             Container(
                               child: RaisedButton(
-                                onPressed: null,
+                                onPressed: () {
+                                  print(_num);
+                                  print(selectedDate);
+                                  print(time);
+                                  _insertReserve();
+                                },
                                 child: Text('Reserve a Table'),
                               ),
                             ),
@@ -212,5 +245,17 @@ class _restoReservation extends State<restoReservation> {
       ),
       shape: CircleBorder(),
     );
+  }
+
+  _insertReserve() async {
+    Database db = await customerdb.createInstance().insertInfo();
+    Map<String, dynamic> toMap() => {
+          "Restoname": widget.restoName,
+          "customerEmail": widget.email,
+          "seats": _num.toString(),
+          "date": selectedDate.toString(),
+          "time": time.toString(),
+        };
+    return await db.insert(customerdb.table2, toMap());
   }
 }

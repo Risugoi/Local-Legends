@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
 
     //return openScreen();
     //return resSignup1();
-    //return customerLogin();
-    return resLogin();
+    return customerLogin();
+    //return resLogin();
   }
 }

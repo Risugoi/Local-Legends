@@ -23,11 +23,6 @@ class _restaurantDisplay extends State<restaurantDisplay> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.resDetails[0].values.elementAt(14).toString() == 'Yes') {
-      print('24 hours time');
-    } else {
-      print(widget.resDetails[0].values.elementAt(0));
-    }
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(

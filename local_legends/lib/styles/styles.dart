@@ -4,3 +4,7 @@ final textBox = BoxDecoration(
   border: Border.all(color: Colors.black),
   borderRadius: BorderRadius.circular(5.0),
 );
+
+final borders = BoxDecoration(
+  border: Border.all(color: Colors.black),
+);
