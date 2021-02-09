@@ -59,8 +59,14 @@ class _merchantReserve extends State<merchantReserve> {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(_reserveList[index].values.elementAt(3)),
-                      Text(_reserveList[index].values.elementAt(5)),
+                      Text(_reserveList[index].values.elementAt(3) + ' Seats'),
+                      Text(_reserveList[index].values.elementAt(5) +
+                          '    ' +
+                          _reserveList[index]
+                              .values
+                              .elementAt(4)
+                              .toString()
+                              .substring(0, 11)),
                     ],
                   ),
                   trailing: RaisedButton(

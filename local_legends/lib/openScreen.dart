@@ -47,7 +47,7 @@ class _openScreen extends State<openScreen> {
                                               builder: (context) =>
                                                   customerLogin()));
                                     },
-                                    child: Text('Customer'),
+                                    child: Text("I'm a Customer"),
                                   ),
                                 ),
                                 SizedBox(height: 30),
@@ -59,7 +59,7 @@ class _openScreen extends State<openScreen> {
                                         MaterialPageRoute(
                                             builder: (context) => resLogin()));
                                   },
-                                  child: Text('Merchant'),
+                                  child: Text("I'm a Retaurant Owner"),
                                 ))
                               ]))))
                 ]))));

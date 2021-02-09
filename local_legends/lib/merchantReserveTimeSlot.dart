@@ -56,10 +56,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Mon'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -69,10 +89,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Tue'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -82,10 +122,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Wed'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -95,10 +155,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Thu'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -108,10 +188,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Fri'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -121,10 +221,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Sat'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),
@@ -134,10 +254,30 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                           child: Row(
                             children: <Widget>[
                               Text('Sun'),
+                              SizedBox(
+                                width: 25,
+                              ),
                               Text('10AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('11AM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('1PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('2PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text('3PM'),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('4PM'),
                             ],
                           ),
                         ),

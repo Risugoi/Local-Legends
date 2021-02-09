@@ -83,11 +83,14 @@ class _restoReservation extends State<restoReservation> {
                         child: Column(
                           children: <Widget>[
                             Text('Date'),
+                            SizedBox(
+                              width: 15,
+                            ),
                             Row(
                               children: <Widget>[
                                 RaisedButton(
                                   onPressed: () => selectDate(context),
-                                  child: Text('Choose Date'),
+                                  child: Text('Date'),
                                 ),
                                 Text(
                                   "${selectedDate.toLocal()}".split(' ')[0],
@@ -114,6 +117,9 @@ class _restoReservation extends State<restoReservation> {
                                       },
                                       child: Text('10AM'),
                                     ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
                                     RaisedButton(
                                       onPressed: () {
                                         setState(() {
@@ -121,6 +127,9 @@ class _restoReservation extends State<restoReservation> {
                                         });
                                       },
                                       child: Text('11AM'),
+                                    ),
+                                    SizedBox(
+                                      width: 15,
                                     ),
                                     RaisedButton(
                                       onPressed: () {
@@ -132,6 +141,7 @@ class _restoReservation extends State<restoReservation> {
                                     ),
                                   ],
                                 ),
+                                SizedBox(height: 5),
                                 Row(
                                   children: <Widget>[
                                     RaisedButton(
@@ -142,6 +152,9 @@ class _restoReservation extends State<restoReservation> {
                                       },
                                       child: Text('2PM'),
                                     ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
                                     RaisedButton(
                                       onPressed: () {
                                         setState(() {
@@ -149,6 +162,9 @@ class _restoReservation extends State<restoReservation> {
                                         });
                                       },
                                       child: Text('3PM'),
+                                    ),
+                                    SizedBox(
+                                      width: 15,
                                     ),
                                     RaisedButton(
                                       onPressed: () {
@@ -243,7 +259,9 @@ class _restoReservation extends State<restoReservation> {
         color: Colors.black,
         size: 12.0,
       ),
-      shape: CircleBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero,
+      ),
     );
   }
 
