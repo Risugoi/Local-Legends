@@ -84,6 +84,7 @@ class _resLogin extends State<resLogin> {
                                   width: 300,
                                   child: TextFormField(
                                     controller: _passwordCon,
+                                    obscureText: true,
                                     keyboardType: TextInputType.text,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -385,6 +386,7 @@ class _resSignup1 extends State<resSignup1> {
                                 width: 300.0,
                                 child: TextFormField(
                                   controller: _passwordCon,
+                                  obscureText: true,
                                   keyboardType: TextInputType.text,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -409,6 +411,7 @@ class _resSignup1 extends State<resSignup1> {
                                 width: 300.0,
                                 child: TextFormField(
                                   controller: _confirmPasswordCon,
+                                  obscureText: true,
                                   keyboardType: TextInputType.text,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,

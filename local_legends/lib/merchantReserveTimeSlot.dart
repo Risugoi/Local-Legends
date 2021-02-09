@@ -4,9 +4,9 @@ import 'package:local_legends/merchantHome.dart';
 import 'package:local_legends/styles/styles.dart';
 
 class reserveTimeSlot extends StatefulWidget {
-  final String email;
+  final String email, name;
   final List resDetails;
-  const reserveTimeSlot({Key key, this.resDetails, this.email})
+  const reserveTimeSlot({Key key, this.resDetails, this.name, this.email})
       : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
-                          child: Text('Retaurant Name'),
+                          child: Text(widget.name.toString()),
                         ),
                         SizedBox(height: 10),
                         Container(

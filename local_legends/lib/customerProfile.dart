@@ -4,7 +4,8 @@ import 'package:local_legends/customerHome.dart';
 
 class customerProfile extends StatefulWidget {
   final String email;
-  const customerProfile({Key key, this.email}) : super(key: key);
+  final List userInfo;
+  const customerProfile({Key key, this.userInfo, this.email}) : super(key: key);
 
   @override
   _customerProfile createState() => _customerProfile();
@@ -50,10 +51,18 @@ class _customerProfile extends State<customerProfile> {
                           Container(
                             child: Column(
                               children: <Widget>[
-                                Text('Name'),
-                                Text('Contact'),
-                                Text('email'),
-                                Text('bday')
+                                Text(widget.userInfo[0].values
+                                    .elementAt(0)
+                                    .toString()),
+                                Text(widget.userInfo[0].values
+                                    .elementAt(4)
+                                    .toString()),
+                                Text(widget.userInfo[0].values
+                                    .elementAt(1)
+                                    .toString()),
+                                Text(widget.userInfo[0].values
+                                    .elementAt(2)
+                                    .toString())
                               ],
                             ),
                           ),

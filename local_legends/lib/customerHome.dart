@@ -24,6 +24,7 @@ class _customerHome extends State<customerHome> {
   int _numRes;
   List _restaurantInfo = [];
   List _restoDetails = [];
+  List _userInfo = [];
   List<String> _restaurantList = [];
   @override
   void initState() {
@@ -84,6 +85,7 @@ class _customerHome extends State<customerHome> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => customerProfile(
+                                userInfo: _userInfo,
                                 email: widget.email,
                               )));
                 },
@@ -160,8 +162,10 @@ class _customerHome extends State<customerHome> {
     try {
       String n = await _getName();
       List r = await _getResInfo();
+      List u = await _getUserInfo();
       setState(() {
         _name = n;
+        _userInfo = u;
         _restaurantInfo = r;
       });
     } catch (e) {
@@ -186,6 +190,14 @@ class _customerHome extends State<customerHome> {
     List<Map> name = await db.rawQuery(
         "SELECT ${customerdb.name} FROM ${customerdb.table1} WHERE ${customerdb.email} = '${widget.email}'");
     return name[0].values.toList()[0];
+  }
+
+  _getUserInfo() async {
+    String path = p.join(await getDatabasesPath(), customerdb.dbName);
+    var db = await openDatabase(path);
+    List<Map> name = await db.rawQuery(
+        "SELECT * FROM ${customerdb.table1} WHERE ${customerdb.email} = '${widget.email}'");
+    return name.toList();
   }
 
   _getResInfo() async {

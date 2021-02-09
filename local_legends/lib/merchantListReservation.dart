@@ -7,8 +7,9 @@ import 'package:sqflite/sqflite.dart';
 
 class merchantReserve extends StatefulWidget {
   final String email, name;
-  final List resDetails;
-  const merchantReserve({Key key, this.resDetails, this.name, this.email})
+  final List resDetails, reserveList;
+  const merchantReserve(
+      {Key key, this.resDetails, this.reserveList, this.name, this.email})
       : super(key: key);
 
   @override
@@ -17,19 +18,14 @@ class merchantReserve extends StatefulWidget {
 
 class _merchantReserve extends State<merchantReserve> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  List _reserveList = [];
   int _n;
-  @override
-  void initState() {
-    super.initState();
-    info();
-  }
 
   @override
   Widget build(BuildContext context) {
-    _n = _reserveList.length;
-    print(_reserveList);
+    _n = widget.reserveList.length;
     print(_n);
+    print(widget.reserveList[0].values);
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -55,15 +51,20 @@ class _merchantReserve extends State<merchantReserve> {
                   contentPadding:
                       EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
                   leading: Image.asset('assets/images/logo.png'),
-                  title: Text(_reserveList[index].values.elementAt(1)),
+                  title: Text(
+                      widget.reserveList[index].values.elementAt(1).toString()),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(_reserveList[index].values.elementAt(3) + ' Seats'),
-                      Text(_reserveList[index].values.elementAt(5) +
+                      Text(widget.reserveList[index].values
+                              .elementAt(3)
+                              .toString() +
+                          ' Seats'),
+                      Text(widget.reserveList[index].values
+                              .elementAt(5)
+                              .toString() +
                           '    ' +
-                          _reserveList[index]
-                              .values
+                          widget.reserveList[index].values
                               .elementAt(4)
                               .toString()
                               .substring(0, 11)),
@@ -76,35 +77,5 @@ class _merchantReserve extends State<merchantReserve> {
                 );
               },
             )));
-  }
-
-  void info() async {
-    try {
-      List reserveDetails = await _getReservationInfo();
-      setState(() {
-        _reserveList = reserveDetails;
-      });
-    } catch (e) {
-      print('error');
-    }
-  }
-
-  _getReservationInfo() async {
-    String path = p.join(await getDatabasesPath(), customerdb.dbName);
-    var db = await openDatabase(path);
-    List<Map> numRows = await db.rawQuery(
-        "SELECT COUNT (${customerdb.restoName}) from ${customerdb.table2}");
-    int getNum = numRows[0].values.elementAt(0);
-    List<Map> results = await db.rawQuery(
-        "SELECT COUNT(*) FROM ${customerdb.table2} WHERE ${customerdb.restoName}='${widget.name}'");
-    if (getNum == 0) {
-    } else {
-      int userCount = results[0].values.elementAt(0);
-      if (userCount > 0) {
-        List<Map> reservationList = await db.rawQuery(
-            "SELECT * FROM ${customerdb.table2} WHERE ${customerdb.restoName} = '${widget.name}'");
-        return reservationList.toList();
-      }
-    }
   }
 }

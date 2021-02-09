@@ -76,6 +76,7 @@ class _customerLogin extends State<customerLogin> {
                           width: 300,
                           child: TextFormField(
                             controller: _passwordCon,
+                            obscureText: true,
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -204,6 +205,7 @@ class customerSignup extends StatefulWidget {
 class _customerSignup extends State<customerSignup> {
   String name;
   String email;
+  String contactNumber;
   String bday;
   String password;
   String confirmPassword;
@@ -211,6 +213,7 @@ class _customerSignup extends State<customerSignup> {
   //controllers
   final _nameCon = new TextEditingController();
   final _emailCon = new TextEditingController();
+  final _contactCon = new TextEditingController();
   final _bdayCon = new TextEditingController();
   final _passwordCon = new TextEditingController();
   final _confirmPassCon = new TextEditingController();
@@ -284,6 +287,30 @@ class _customerSignup extends State<customerSignup> {
                               height: 40,
                               width: 300,
                               child: TextFormField(
+                                controller: _contactCon,
+                                keyboardType: TextInputType.phone,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.only(
+                                      top: 2.0, bottom: 2.0, left: 1.0),
+                                  hintText: 'Contact Number',
+                                ),
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Contact Number is required';
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              decoration: textBox,
+                              height: 40,
+                              width: 300,
+                              child: TextFormField(
                                 controller: _emailCon,
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
@@ -333,6 +360,7 @@ class _customerSignup extends State<customerSignup> {
                               width: 300,
                               child: TextFormField(
                                 controller: _passwordCon,
+                                obscureText: true,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -357,6 +385,7 @@ class _customerSignup extends State<customerSignup> {
                               width: 300,
                               child: TextFormField(
                                 controller: _confirmPassCon,
+                                obscureText: true,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -390,6 +419,7 @@ class _customerSignup extends State<customerSignup> {
                                   bday = _bdayCon.text;
                                   password = _passwordCon.text;
                                   confirmPassword = _confirmPassCon.text;
+                                  contactNumber = _contactCon.text;
                                   if (password == confirmPassword) {
                                     _insertAccount();
                                     Navigator.push(
@@ -417,8 +447,13 @@ class _customerSignup extends State<customerSignup> {
 
   _insertAccount() async {
     Database db = await customerdb.createInstance().insertInfo();
-    Map<String, dynamic> toMap() =>
-        {"name": name, "email": email, "bday": bday, "password": password};
+    Map<String, dynamic> toMap() => {
+          "name": name,
+          "email": email,
+          "bday": bday,
+          "password": password,
+          "contact": contactNumber,
+        };
     return await db.insert(customerdb.table1, toMap());
   }
 }

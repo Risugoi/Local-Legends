@@ -11,6 +11,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:local_legends/customerReserveScreen.dart';
 import 'package:local_legends/openScreen.dart';
 import 'package:local_legends/database/dbHelper.dart';
+import 'package:local_legends/database/customerdb.dart';
 
 class merchantHome extends StatefulWidget {
   final List resDetails;
@@ -24,6 +25,13 @@ class merchantHome extends StatefulWidget {
 class _merchantHome extends State<merchantHome> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   //String name, price, time, delivery, address, number, email, description;
+
+  List _reserveList = [];
+  @override
+  void initState() {
+    super.initState();
+    info();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +69,8 @@ class _merchantHome extends State<merchantHome> {
                         MaterialPageRoute(
                             builder: (context) => reserveTimeSlot(
                                   resDetails: widget.resDetails,
+                                  name:
+                                      widget.resDetails[0].values.elementAt(0),
                                   email: widget.email,
                                 )));
                   },
@@ -73,6 +83,7 @@ class _merchantHome extends State<merchantHome> {
                           MaterialPageRoute(
                               builder: (context) => merchantReserve(
                                     resDetails: widget.resDetails,
+                                    reserveList: _reserveList,
                                     name: widget.resDetails[0].values
                                         .elementAt(0),
                                     email: widget.email,
@@ -202,5 +213,35 @@ class _merchantHome extends State<merchantHome> {
             ),
           ),
         ));
+  }
+
+  void info() async {
+    try {
+      List reserveDetails = await _getReservationInfo();
+      setState(() {
+        _reserveList = reserveDetails;
+      });
+    } catch (e) {
+      print('error');
+    }
+  }
+
+  _getReservationInfo() async {
+    String path = p.join(await getDatabasesPath(), customerdb.dbName);
+    var db = await openDatabase(path);
+    List<Map> numRows = await db.rawQuery(
+        "SELECT COUNT (${customerdb.restoName}) from ${customerdb.table2}");
+    int getNum = numRows[0].values.elementAt(0);
+    List<Map> results = await db.rawQuery(
+        "SELECT COUNT(*) FROM ${customerdb.table2} WHERE ${customerdb.restoName}='${widget.resDetails[0].values.elementAt(0).toString()}'");
+    if (getNum == 0) {
+    } else {
+      int userCount = results[0].values.elementAt(0);
+      if (userCount > 0) {
+        List<Map> reservationList = await db.rawQuery(
+            "SELECT * FROM ${customerdb.table2} WHERE ${customerdb.restoName} = '${widget.resDetails[0].values.elementAt(0).toString()}'");
+        return reservationList.toList();
+      }
+    }
   }
 }

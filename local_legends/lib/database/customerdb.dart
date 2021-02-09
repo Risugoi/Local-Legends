@@ -12,6 +12,7 @@ class customerdb {
   //columns inside the table
   static final name = "name";
   static final email = "email";
+  static final contact = "contact";
   static final bday = "bday";
   static final password = "password";
 
@@ -31,7 +32,7 @@ class customerdb {
 
   void _onCreate(Database db, int newVersion) async {
     await db.execute(
-        "CREATE TABLE IF NOT EXISTS $table1(name, email, bday, password)");
+        "CREATE TABLE IF NOT EXISTS $table1(name, email, bday, password, contact)");
     await db.execute(
         "CREATE TABLE IF NOT EXISTS $table2(RestoName, customerName, customerEmail, seats, date, time)");
   }
