@@ -202,6 +202,15 @@ class _restoReservation extends State<restoReservation> {
                                   print(selectedDate);
                                   print(time);
                                   _insertReserve();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              restaurantDisplay(
+                                                resDetails: widget.restoDetails,
+                                                name: widget.name,
+                                                email: widget.email,
+                                              )));
                                 },
                                 child: Text('Reserve a Table'),
                               ),
