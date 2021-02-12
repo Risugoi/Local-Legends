@@ -54,7 +54,7 @@ class _restoReservation extends State<restoReservation> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Text(widget.restoName),
+                        child: Text(widget.restoName.toString()),
                       ),
                       SizedBox(
                         height: 20,
@@ -62,13 +62,20 @@ class _restoReservation extends State<restoReservation> {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            Text('Seats'),
+                            Text(
+                              'Seats',
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            SizedBox(height: 20),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 _createIncrementDicrementButton(
                                     Icons.remove, () => _dicrement()),
-                                Text(_num.toString()),
+                                Text(
+                                  _num.toString(),
+                                  style: TextStyle(fontSize: 20),
+                                ),
                                 _createIncrementDicrementButton(
                                     Icons.add, () => _increment()),
                               ],
@@ -77,12 +84,18 @@ class _restoReservation extends State<restoReservation> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Container(
                         child: Column(
                           children: <Widget>[
-                            Text('Date'),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Date',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            ),
                             SizedBox(
                               width: 15,
                             ),
@@ -91,6 +104,9 @@ class _restoReservation extends State<restoReservation> {
                                 RaisedButton(
                                   onPressed: () => selectDate(context),
                                   child: Text('Date'),
+                                ),
+                                SizedBox(
+                                  width: 10,
                                 ),
                                 Text(
                                   "${selectedDate.toLocal()}".split(' ')[0],
@@ -104,7 +120,13 @@ class _restoReservation extends State<restoReservation> {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            Text('Time'),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Time',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            ),
                             Column(
                               children: <Widget>[
                                 Row(
@@ -196,12 +218,20 @@ class _restoReservation extends State<restoReservation> {
                             ),
                             SizedBox(height: 20),
                             Container(
+                              width: 150,
+                              height: 40,
                               child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                color: Colors.blueAccent,
                                 onPressed: () {
                                   print(_num);
                                   print(selectedDate);
                                   print(time);
                                   _insertReserve();
+                                  reserveSuccess();
+
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -213,6 +243,7 @@ class _restoReservation extends State<restoReservation> {
                                               )));
                                 },
                                 child: Text('Reserve a Table'),
+                                textColor: Colors.white,
                               ),
                             ),
                           ],
@@ -227,6 +258,27 @@ class _restoReservation extends State<restoReservation> {
         ),
       ),
     );
+  }
+
+  Widget reserveSuccess() {
+    //buttons
+    Widget button = FlatButton(
+        onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
+        child: Text('OK'));
+
+    //words
+    AlertDialog message = AlertDialog(
+      title: Text('Success!'),
+      content: Text('You may cancel within 24 hours'),
+      actions: [button],
+    );
+
+    //show the box
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return message;
+        });
   }
 
   void _increment() {
@@ -259,14 +311,14 @@ class _restoReservation extends State<restoReservation> {
   Widget _createIncrementDicrementButton(IconData icon, Function onPressed) {
     return RawMaterialButton(
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      constraints: BoxConstraints(minWidth: 32.0, minHeight: 32.0),
+      constraints: BoxConstraints(minWidth: 40.0, minHeight: 40.0),
       onPressed: onPressed,
       elevation: 2.0,
-      fillColor: Colors.grey,
+      fillColor: Colors.blue,
       child: Icon(
         icon,
-        color: Colors.black,
-        size: 12.0,
+        color: Colors.white,
+        size: 30.0,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.zero,

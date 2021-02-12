@@ -173,7 +173,7 @@ class _customerLogin extends State<customerLogin> {
   Widget loginError() {
     //buttons
     Widget button = FlatButton(
-        onPressed: () => Navigator.pop(context, false),
+        onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
         child: Text('Continue'));
 
     //words

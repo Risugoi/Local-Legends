@@ -144,7 +144,7 @@ class _resLogin extends State<resLogin> {
   Widget loginError() {
     //buttons
     Widget button = FlatButton(
-        onPressed: () => Navigator.pop(context, false),
+        onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
         child: Text('Continue'));
 
     //words
