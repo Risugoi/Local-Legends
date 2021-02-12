@@ -44,7 +44,10 @@ class _customerHome extends State<customerHome> {
         appBar: AppBar(
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.search),
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
                 onPressed: () {
                   final List<String> list = _restaurantList;
                   showSearch(
@@ -54,9 +57,9 @@ class _customerHome extends State<customerHome> {
           ],
           title: Text(
             "Restaurants",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.blue,
           elevation: 0,
         ),

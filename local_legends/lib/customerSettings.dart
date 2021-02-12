@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_legends/customerHome.dart';
+import 'package:custom_switch/custom_switch.dart';
 
 class customerSettings extends StatefulWidget {
   final String email;
@@ -12,7 +13,7 @@ class customerSettings extends StatefulWidget {
 
 class _customerSettings extends State<customerSettings> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  bool _notif = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,41 +43,123 @@ class _customerSettings extends State<customerSettings> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(
-                            height: 20,
+                            height: 40,
                           ),
-                          Container(child: Text('Notifications')),
-                          SizedBox(height: 20),
+                          Row(children: <Widget>[
+                            Text(
+                              'Notifications',
+                              style: TextStyle(color: Colors.grey),
+                            )
+                          ]),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Divider(
+                            color: Colors.black,
+                          ),
+                          SizedBox(height: 5),
                           Container(
                             child: Column(
                               children: <Widget>[
                                 Row(children: <Widget>[
-                                  Text('Notifications'),
+                                  Text(
+                                    'Notifications',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    width: 180,
+                                  ),
+                                  SizedBox(
+                                    width: 70,
+                                    height: 25,
+                                    child: CustomSwitch(
+                                      activeColor: Colors.blueAccent,
+                                      value: _notif,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _notif = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
                                 ]),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 5),
                                 Row(children: <Widget>[
-                                  Text('[Filter Space]'),
+                                  Text(
+                                    '[Filler Space]',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
                                 ]),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 5),
                               ],
                             ),
                           ),
-                          SizedBox(height: 20),
-                          Container(child: Text('Account')),
-                          SizedBox(height: 20),
+                          SizedBox(height: 50),
+                          Row(children: <Widget>[
+                            Text(
+                              'Account',
+                              style: TextStyle(color: Colors.grey),
+                            )
+                          ]),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Divider(
+                            color: Colors.black,
+                          ),
+                          SizedBox(height: 5),
                           Container(
                             child: Column(
                               children: <Widget>[
                                 Row(children: <Widget>[
-                                  Text('Change Password'),
+                                  Text(
+                                    'Change Password',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
                                 ]),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 5),
                                 Row(children: <Widget>[
-                                  Text('Delete Account'),
-                                ])
+                                  Text(
+                                    'Delete Account',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ]),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 5),
                               ],
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 100),
                           RaisedButton(
-                            onPressed: null,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7)),
+                            onPressed: () {},
                             child: Text('Save Changes'),
+                            color: Colors.blueAccent,
+                            textColor: Colors.white,
                           )
                         ],
                       ),

@@ -44,6 +44,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "custom_switch",
+      "rootUri": "file:///D:/flutter/.pub-cache/hosted/pub.dartlang.org/custom_switch-0.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///D:/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0-nullsafety.1",
       "packageUri": "lib/",
@@ -236,7 +242,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-02-07T16:33:34.274764Z",
+  "generated": "2021-02-12T17:54:39.262826Z",
   "generator": "pub",
   "generatorVersion": "2.10.5"
 }
