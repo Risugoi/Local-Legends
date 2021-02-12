@@ -21,6 +21,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+            title: Text('Reservation System'),
             leading: IconButton(
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {
@@ -42,245 +43,336 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          child: Text(widget.name.toString()),
-                        ),
                         SizedBox(height: 10),
                         Container(
-                          child: Text('Reservation System'),
+                          child: Text(
+                            widget.name.toString(),
+                            style: TextStyle(fontSize: 30),
+                          ),
                         ),
                         SizedBox(height: 20),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Mon'),
+                              Text(
+                                '  Mon',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ]),
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Tue'),
+                              Text(
+                                '  Tue  ',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Wed'),
+                              Text(
+                                '  Wed',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Thu'),
+                              Text(
+                                '  Thu ',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Fri'),
+                              Text(
+                                '  Fri   ',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Sat'),
+                              Text(
+                                '  Sat ',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 5),
                         Container(
-                          decoration: borders,
                           height: 70,
                           child: Row(
                             children: <Widget>[
-                              Text('Sun'),
+                              Text(
+                                '  Sun',
+                                style: TextStyle(fontSize: 30.0),
+                              ),
                               SizedBox(
                                 width: 25,
                               ),
-                              Text('10AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('11AM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('1PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('2PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('3PM'),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('4PM'),
+                              Row(children: <Widget>[
+                                Text('10AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('11AM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('1PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('2PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('3PM'),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('4PM'),
+                              ])
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 20),
+                        RaisedButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(7)),
+                          onPressed: () {},
+                          child: Text(
+                            'Save Changes',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          color: Colors.blueAccent,
+                        )
                       ],
                     ),
                   ),

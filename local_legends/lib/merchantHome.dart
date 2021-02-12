@@ -39,8 +39,8 @@ class _merchantHome extends State<merchantHome> {
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
           appBar: AppBar(
-            iconTheme: IconThemeData(color: Colors.black),
-            backgroundColor: Colors.transparent,
+            iconTheme: IconThemeData(color: Colors.white),
+            backgroundColor: Colors.blue,
             elevation: 0,
           ),
           drawer: Drawer(
@@ -54,8 +54,17 @@ class _merchantHome extends State<merchantHome> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                              child: Text(
-                                  widget.resDetails[0].values.elementAt(0))),
+                              child: Column(
+                            children: <Widget>[
+                              Image.asset(
+                                'assets/images/finalLogo.png',
+                                height: 100,
+                                width: 100,
+                              ),
+                              SizedBox(height: 10),
+                              Text(widget.resDetails[0].values.elementAt(0)),
+                            ],
+                          )),
                         ],
                       ),
                     ),
@@ -105,7 +114,7 @@ class _merchantHome extends State<merchantHome> {
                   },
                 ),
                 ListTile(
-                  title: Text('Signout'),
+                  title: Text('Log out'),
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => openScreen()));
@@ -133,7 +142,11 @@ class _merchantHome extends State<merchantHome> {
                         padding: EdgeInsets.only(
                             top: 35, bottom: 10, left: 35, right: 45),
                         alignment: Alignment(-1, -1),
-                        child: Text(widget.resDetails[0].values.elementAt(0)),
+                        child: Text(
+                          widget.resDetails[0].values.elementAt(0),
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -141,9 +154,32 @@ class _merchantHome extends State<merchantHome> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(widget.resDetails[0].values.elementAt(15)),
-                          Text(widget.resDetails[0].values.elementAt(14)),
-                          Text(widget.resDetails[0].values.elementAt(13))
+                          Text(
+                            widget.resDetails[0].values.elementAt(15),
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                          widget.resDetails[0].values
+                                      .elementAt(14)
+                                      .toString() ==
+                                  'Yes'
+                              ? Text(
+                                  '24 Hours',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              : Text(
+                                  '24 Hours',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                          widget.resDetails[0].values
+                                      .elementAt(13)
+                                      .toString() ==
+                                  'Yes'
+                              ? Text(
+                                  'Delivery',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              : Text('Delivery',
+                                  style: TextStyle(color: Colors.grey)),
                         ],
                       ),
                       SizedBox(
@@ -153,21 +189,67 @@ class _merchantHome extends State<merchantHome> {
                         padding: EdgeInsets.only(
                             top: 35, bottom: 10, left: 35, right: 45),
                         alignment: Alignment(-1, -1),
-                        child: Text(widget.resDetails[0].values.elementAt(2)),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/images/location.png',
+                              width: 30,
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Container(
+                              child: Text(
+                                  widget.resDetails[0].values.elementAt(2)),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 13,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Text(widget.resDetails[0].values.elementAt(6)),
-                          Text(widget.resDetails[0].values.elementAt(4)),
-                        ],
+                      Container(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/phone.png',
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(widget.resDetails[0].values.elementAt(6)),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 23,
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/email.png',
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(widget.resDetails[0].values.elementAt(4)),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(height: 50),
                       Container(
-                          decoration: textBox,
+                          padding: EdgeInsets.all(10),
+                          decoration: textBox2,
                           height: 80,
                           width: 300,
                           child:
@@ -197,10 +279,12 @@ class _merchantHome extends State<merchantHome> {
                       ),
                       SizedBox(height: 40),
                       Container(
-                          padding: EdgeInsets.symmetric(vertical: 20.0),
-                          width: 300.0,
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 40),
                           child: RaisedButton(
+                              color: Colors.blueAccent,
                               child: Text('Edit Page'),
+                              textColor: Colors.white,
                               padding: EdgeInsets.only(
                                   left: 20, right: 20, top: 10, bottom: 10),
                               shape: RoundedRectangleBorder(
