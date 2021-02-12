@@ -57,7 +57,7 @@ class _customerHome extends State<customerHome> {
             style: TextStyle(color: Colors.black),
           ),
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.blue,
           elevation: 0,
         ),
         drawer: Drawer(
@@ -71,8 +71,17 @@ class _customerHome extends State<customerHome> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          child: Text(_name),
-                        ),
+                            child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/images/finalLogo.png',
+                              height: 100,
+                              width: 100,
+                            ),
+                            SizedBox(height: 10),
+                            Text('Welcome, ' + _name),
+                          ],
+                        )),
                       ],
                     ),
                   ),
@@ -112,7 +121,7 @@ class _customerHome extends State<customerHome> {
                 },
               ),
               ListTile(
-                title: Text('Signout'),
+                title: Text('Log out'),
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => openScreen()));
@@ -133,12 +142,12 @@ class _customerHome extends State<customerHome> {
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(_restaurantInfo[index].values.elementAt(2)),
                   Text(_restaurantInfo[index]
                       .values
                       .elementAt(1)
                       .toString()
                       .substring(11)),
+                  Text(_restaurantInfo[index].values.elementAt(2)),
                 ],
               ),
               onTap: () {

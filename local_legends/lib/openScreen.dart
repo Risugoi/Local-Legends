@@ -29,17 +29,26 @@ class _openScreen extends State<openScreen> {
                                   children: <Widget>[
                                 SizedBox(
                                     height:
-                                        170), // height of logo from top of the screen
+                                        40), // height of logo from top of the screen
                                 //logo image
                                 Container(
-                                  child: Text('logo'),
+                                  child: Image.asset(
+                                    'assets/images/finalLogo.png',
+                                    height: 300,
+                                    width: 300,
+                                  ),
                                   alignment: Alignment(0, -0.8),
                                 ),
                                 SizedBox(
-                                  height: 150,
+                                  height: 100,
                                 ),
                                 Container(
+                                  width: 250,
+                                  height: 50,
                                   child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(7)),
+                                    color: Colors.blueAccent,
                                     onPressed: () {
                                       Navigator.push(
                                           context,
@@ -47,20 +56,29 @@ class _openScreen extends State<openScreen> {
                                               builder: (context) =>
                                                   customerLogin()));
                                     },
-                                    child: Text("I'm a Customer"),
+                                    child: Text("I'M A CUSTOMER"),
+                                    textColor: Colors.white,
                                   ),
                                 ),
                                 SizedBox(height: 30),
                                 Container(
+                                    width: 250,
+                                    height: 50,
                                     child: RaisedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => resLogin()));
-                                  },
-                                  child: Text("I'm a Retaurant Owner"),
-                                ))
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(7)),
+                                      color: Colors.blueAccent,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    resLogin()));
+                                      },
+                                      child: Text("I'M A RESTAURANT OWNER"),
+                                      textColor: Colors.white,
+                                    ))
                               ]))))
                 ]))));
   }

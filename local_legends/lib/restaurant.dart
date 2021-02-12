@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_legends/styles/styles.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart' as p;
 import 'package:local_legends/customerHome.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:local_legends/customerReserveScreen.dart';
 
 class restaurantDisplay extends StatefulWidget {
@@ -26,23 +23,17 @@ class _restaurantDisplay extends State<restaurantDisplay> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(150.0),
-            child: AppBar(
-              flexibleSpace: Image(
-                image: AssetImage('assets/images/logo.png'),
-                fit: BoxFit.fill,
-              ),
-              leading: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.white),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                customerHome(email: widget.email)));
-                  }),
-            ),
+          appBar: AppBar(
+            title: Text('Restaurant'),
+            leading: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              customerHome(email: widget.email)));
+                }),
           ),
           body: AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle.light,
@@ -56,10 +47,20 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Container(
                         padding: EdgeInsets.only(
                             top: 35, bottom: 10, left: 35, right: 45),
                         alignment: Alignment(-1, -1),
-                        child: Text(widget.resDetails[0].values.elementAt(0)),
+                        child: Text(
+                          widget.resDetails[0].values.elementAt(0),
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -67,9 +68,36 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(widget.resDetails[0].values.elementAt(15)),
-                          Text(widget.resDetails[0].values.elementAt(14)),
-                          Text(widget.resDetails[0].values.elementAt(13))
+                          Text(
+                            widget.resDetails[0].values
+                                .elementAt(15)
+                                .toString(),
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                          widget.resDetails[0].values
+                                      .elementAt(14)
+                                      .toString() ==
+                                  'Yes'
+                              ? Text(
+                                  '24 Hours',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              : Text(
+                                  '24 Hours',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                          widget.resDetails[0].values
+                                      .elementAt(13)
+                                      .toString() ==
+                                  'Yes'
+                              ? Text(
+                                  'Delivery',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              : Text(
+                                  'Delivery',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
                         ],
                       ),
                       SizedBox(
@@ -77,23 +105,70 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                       ),
                       Container(
                         padding: EdgeInsets.only(
-                            top: 35, bottom: 10, left: 35, right: 45),
+                          left: 25,
+                        ),
                         alignment: Alignment(-1, -1),
-                        child: Text(widget.resDetails[0].values.elementAt(2)),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/images/location.png',
+                              width: 30,
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Container(
+                              child: Text(
+                                  widget.resDetails[0].values.elementAt(2)),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Text(widget.resDetails[0].values.elementAt(6)),
-                          Text(widget.resDetails[0].values.elementAt(4)),
-                        ],
+                      Container(
+                        padding: EdgeInsets.only(left: 35),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/phone.png',
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(widget.resDetails[0].values.elementAt(6)),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 23,
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/email.png',
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(widget.resDetails[0].values.elementAt(4)),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(height: 50),
                       Container(
-                          decoration: textBox,
+                          padding: EdgeInsets.all(10),
+                          decoration: textBox2,
                           height: 80,
                           width: 300,
                           child:
@@ -121,12 +196,14 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 30),
                       Container(
-                          padding: EdgeInsets.symmetric(vertical: 20.0),
-                          width: 300.0,
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 40),
                           child: RaisedButton(
+                              color: Colors.blueAccent,
                               child: Text('Reserve a Table'),
+                              textColor: Colors.white,
                               padding: EdgeInsets.only(
                                   left: 20, right: 20, top: 10, bottom: 10),
                               shape: RoundedRectangleBorder(

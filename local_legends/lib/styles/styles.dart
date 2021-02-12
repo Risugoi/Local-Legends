@@ -5,6 +5,11 @@ final textBox = BoxDecoration(
   borderRadius: BorderRadius.circular(5.0),
 );
 
+final textBox2 = BoxDecoration(
+  border: Border.all(color: Colors.lightBlue),
+  borderRadius: BorderRadius.circular(5.0),
+);
+
 final borders = BoxDecoration(
   border: Border.all(color: Colors.black),
 );

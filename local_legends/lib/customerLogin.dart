@@ -39,79 +39,110 @@ class _customerLogin extends State<customerLogin> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        SizedBox(
-                          height: 150.0,
-                        ),
                         Container(
-                          child: Text('logo'),
+                          child: Image.asset(
+                            'assets/images/finalLogo.png',
+                            height: 300,
+                            width: 300,
+                          ),
+                          alignment: Alignment(0, 0),
                         ),
-                        SizedBox(
-                          height: 150,
-                        ),
+                        Text('CUSTOMER'),
+                        SizedBox(height: 50),
                         Container(
-                          decoration: textBox,
-                          height: 40,
-                          width: 300,
-                          child: TextFormField(
-                            controller: _emailCon,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(
-                                  top: 2.0, bottom: 2.0, left: 1.0),
-                              hintText: 'Email',
-                            ),
-                            validator: (value) {
-                              if (value.isEmpty) {
-                                return 'Email is required';
-                              }
-                              return null;
-                            },
+                          child: Column(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  EMAIL ADDRESS'),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _emailCon,
+                                  keyboardType: TextInputType.emailAddress,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Email is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(height: 20),
                         Container(
-                          decoration: textBox,
-                          height: 40,
-                          width: 300,
-                          child: TextFormField(
-                            controller: _passwordCon,
-                            obscureText: true,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(
-                                  top: 2.0, bottom: 2.0, left: 1.0),
-                              hintText: 'Password',
-                            ),
-                            validator: (value) {
-                              if (value.isEmpty) {
-                                return 'Password is required';
-                              }
-                              return null;
-                            },
+                          child: Column(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  PASSWORD'),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _passwordCon,
+                                  obscureText: true,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Password is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(
                           height: 30,
                         ),
                         Container(
+                          width: 170,
+                          height: 40,
                           child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7)),
+                            color: Colors.blueAccent,
                             onPressed: () {
                               _email = _emailCon.text;
                               _password = _passwordCon.text;
                               _verifyInfo();
                             },
                             child: Text('Login'),
+                            textColor: Colors.white,
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 50,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text("No account yet?  "),
+                            Text("Don't have an account yet?  "),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -121,7 +152,7 @@ class _customerLogin extends State<customerLogin> {
                                             customerSignup()));
                               },
                               child: Text(
-                                'Signup',
+                                'Create one now',
                                 style: TextStyle(color: Colors.blue),
                               ),
                             )
