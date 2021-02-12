@@ -54,7 +54,10 @@ class _restoReservation extends State<restoReservation> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Text(widget.restoName.toString()),
+                        child: Text(
+                          widget.restoName.toString(),
+                          style: TextStyle(fontSize: 40),
+                        ),
                       ),
                       SizedBox(
                         height: 20,

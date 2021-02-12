@@ -20,6 +20,7 @@ class _customerProfile extends State<customerProfile> {
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
           appBar: AppBar(
+              title: Text('Profile'),
               leading: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -37,39 +38,80 @@ class _customerProfile extends State<customerProfile> {
                 Container(
                   height: double.infinity,
                   child: SingleChildScrollView(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
                     child: new Form(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Container(child: Text('Profile')),
+                          SizedBox(
+                            height: 20,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
                           Container(
-                              child: Image.asset('assets/images/logo.png')),
-                          SizedBox(height: 20),
+                              child: Image.asset(
+                            'assets/images/logo.png',
+                            height: 50,
+                            width: 50,
+                          )),
+                          SizedBox(height: 30),
                           Container(
                             child: Column(
                               children: <Widget>[
-                                Text(widget.userInfo[0].values
-                                    .elementAt(0)
-                                    .toString()),
-                                Text(widget.userInfo[0].values
-                                    .elementAt(4)
-                                    .toString()),
-                                Text(widget.userInfo[0].values
-                                    .elementAt(1)
-                                    .toString()),
-                                Text(widget.userInfo[0].values
-                                    .elementAt(2)
-                                    .toString())
+                                Row(children: <Widget>[
+                                  Text(
+                                    widget.userInfo[0].values
+                                        .elementAt(0)
+                                        .toString(),
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ]),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(children: <Widget>[
+                                  Text(
+                                    widget.userInfo[0].values
+                                        .elementAt(4)
+                                        .toString(),
+                                    style: TextStyle(fontSize: 20),
+                                  )
+                                ]),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(children: <Widget>[
+                                  Text(
+                                    widget.userInfo[0].values
+                                        .elementAt(1)
+                                        .toString(),
+                                    style: TextStyle(fontSize: 20),
+                                  )
+                                ]),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(children: <Widget>[
+                                  Text(
+                                    widget.userInfo[0].values
+                                        .elementAt(2)
+                                        .toString(),
+                                    style: TextStyle(fontSize: 20),
+                                  )
+                                ])
                               ],
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 40),
                           RaisedButton(
-                            onPressed: null,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7)),
+                            onPressed: () {},
                             child: Text('Edit Profile'),
+                            color: Colors.blueAccent,
+                            textColor: Colors.white,
                           )
                         ],
                       ),

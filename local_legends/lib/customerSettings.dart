@@ -19,6 +19,7 @@ class _customerSettings extends State<customerSettings> {
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
           appBar: AppBar(
+              title: Text('Settings'),
               leading: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -40,7 +41,6 @@ class _customerSettings extends State<customerSettings> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Container(child: Text('Settings')),
                           SizedBox(
                             height: 20,
                           ),
@@ -49,8 +49,12 @@ class _customerSettings extends State<customerSettings> {
                           Container(
                             child: Column(
                               children: <Widget>[
-                                Text('Notifications'),
-                                Text('[Filter Space]'),
+                                Row(children: <Widget>[
+                                  Text('Notifications'),
+                                ]),
+                                Row(children: <Widget>[
+                                  Text('[Filter Space]'),
+                                ]),
                               ],
                             ),
                           ),
@@ -60,8 +64,12 @@ class _customerSettings extends State<customerSettings> {
                           Container(
                             child: Column(
                               children: <Widget>[
-                                Text('Change Password'),
-                                Text('Delete Account'),
+                                Row(children: <Widget>[
+                                  Text('Change Password'),
+                                ]),
+                                Row(children: <Widget>[
+                                  Text('Delete Account'),
+                                ])
                               ],
                             ),
                           ),
