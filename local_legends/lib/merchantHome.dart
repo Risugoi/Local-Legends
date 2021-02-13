@@ -35,6 +35,26 @@ class _merchantHome extends State<merchantHome> {
 
   @override
   Widget build(BuildContext context) {
+    String restoName1 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '1';
+    String restoName2 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '2';
+    String restoName3 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '3';
+    String restoName4 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '4';
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
@@ -135,7 +155,11 @@ class _merchantHome extends State<merchantHome> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Image.asset('assets/images/logo.png'),
+                        child: Image.asset(
+                          'assets/images/$restoName1.jpg',
+                          height: 200,
+                          width: 600,
+                        ),
                       ),
                       SizedBox(height: 20),
                       Container(
@@ -261,17 +285,17 @@ class _merchantHome extends State<merchantHome> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Image.asset(
-                            'assets/images/logo.png',
+                            'assets/images/$restoName2.jpg',
                             height: 55,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/logo.png',
+                            'assets/images/$restoName3.PNG',
                             height: 55,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/logo.png',
+                            'assets/images/$restoName4.PNG',
                             height: 55,
                             width: 80,
                           ),
