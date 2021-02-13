@@ -31,9 +31,9 @@ class Home extends StatelessWidget {
     WidgetsBinding.instance.addPersistentFrameCallback(
         (_) => customerdb.createInstance().createAccountStorageTable());
 
-    //return openScreen();
+    return openScreen();
     //return resSignup1();
     //return customerLogin();
-    return resLogin();
+    //return resLogin();
   }
 }

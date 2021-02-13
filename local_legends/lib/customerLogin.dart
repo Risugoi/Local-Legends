@@ -274,8 +274,7 @@ class _customerSignup extends State<customerSignup> {
               Container(
                 height: double.infinity,
                 child: SingleChildScrollView(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40.0),
                   child: new Form(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -285,13 +284,10 @@ class _customerSignup extends State<customerSignup> {
                             Container(
                               child: Image.asset(
                                 'assets/images/finalLogo.png',
-                                height: 300,
-                                width: 300,
+                                height: 200,
+                                width: 200,
                               ),
-                              alignment: Alignment(0, 0),
-                            ),
-                            SizedBox(
-                              height: 50,
+                              alignment: Alignment(0, -0.7),
                             ),
                             Container(
                                 child: Column(children: <Widget>[

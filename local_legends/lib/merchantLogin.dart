@@ -146,7 +146,7 @@ class _resLogin extends State<resLogin> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 10,
+                                  height: 50,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -292,51 +292,64 @@ class _resSignup1 extends State<resSignup1> {
                 Container(
                   height: double.infinity,
                   child: SingleChildScrollView(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
+                    padding: EdgeInsets.symmetric(horizontal: 40.0),
                     child: new Form(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
+                          Container(
+                            child: Image.asset(
+                              'assets/images/finalLogo.png',
+                              height: 200,
+                              width: 200,
+                            ),
+                            alignment: Alignment(0, -0.7),
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('Restaurant Information'),
-                              SizedBox(
-                                height: 30,
-                              ),
                               Container(
-                                decoration: textBox,
-                                height: 40.0,
-                                width: 300.0,
-                                child: TextFormField(
-                                  controller: _resNameCon,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.only(
-                                        top: 2.0, bottom: 2.0, left: 1.0),
-                                    hintText: 'Restaurant Name*',
+                                  child: Column(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    child: Text('  Restaurant Name'),
                                   ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Retaurant Name is required';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
+                                SizedBox(height: 10),
+                                Container(
+                                  decoration: textBox,
+                                  height: 40.0,
+                                  width: 300.0,
+                                  child: TextFormField(
+                                    controller: _resNameCon,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                          top: 2.0, bottom: 2.0, left: 1.0),
+                                    ),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Retaurant Name is required';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                )
+                              ])),
                               SizedBox(
                                 height: 30,
                               ),
                               Container(
-                                alignment: Alignment.centerLeft,
+                                alignment: Alignment.center,
                                 height: 40.0,
+                                width: 300,
                                 child: Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
+                                      top: 2.0, bottom: 2.0, left: 2.0),
                                   child: DropdownButton<String>(
-                                    hint: Text('Select City*'),
+                                    hint: Text('Select City'),
                                     value: city,
                                     isExpanded: true,
                                     onChanged: (String value) {
@@ -365,100 +378,140 @@ class _resSignup1 extends State<resSignup1> {
                                 height: 30,
                               ),
                               Container(
-                                decoration: textBox,
-                                height: 100.0,
-                                width: 300.0,
-                                child: TextFormField(
-                                  controller: _addressCon,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.only(
-                                        top: 2.0, bottom: 2.0, left: 1.0),
-                                    hintText: 'Restaurant Complete Address*',
+                                  child: Column(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    child: Text('  Main Address'),
                                   ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Retaurant Address is required';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
+                                SizedBox(height: 10),
+                                Container(
+                                  decoration: textBox,
+                                  height: 100.0,
+                                  width: 300.0,
+                                  child: TextFormField(
+                                    controller: _addressCon,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                          top: 2.0, bottom: 2.0, left: 1.0),
+                                    ),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Retaurant Address is required';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
+                              ])),
                               SizedBox(
                                 height: 30,
                               ),
                               Container(
-                                decoration: textBox,
-                                height: 40.0,
-                                width: 300.0,
-                                child: TextFormField(
-                                  controller: _resEmailCon,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.only(
-                                        top: 2.0, bottom: 2.0, left: 1.0),
-                                    hintText: 'Private Email*',
+                                  child: Column(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    child: Text('  Login Email Address'),
                                   ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Email is required';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: textBox,
+                                  height: 40.0,
+                                  width: 300.0,
+                                  child: TextFormField(
+                                    controller: _resEmailCon,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                          top: 2.0, bottom: 2.0, left: 1.0),
+                                    ),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Email is required';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
+                              ])),
                               SizedBox(
                                 height: 30,
                               ),
                               Container(
-                                decoration: textBox,
-                                height: 40.0,
-                                width: 300.0,
-                                child: TextFormField(
-                                  controller: _passwordCon,
-                                  obscureText: true,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.only(
-                                        top: 2.0, bottom: 2.0, left: 1.0),
-                                    hintText: 'Password*',
+                                  child: Column(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    child: Text('  Password'),
                                   ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Password is required';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
+                                SizedBox(height: 10),
+                                Container(
+                                  decoration: textBox,
+                                  height: 40.0,
+                                  width: 300.0,
+                                  child: TextFormField(
+                                    controller: _passwordCon,
+                                    obscureText: true,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                          top: 2.0, bottom: 2.0, left: 1.0),
+                                    ),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Password is required';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
+                              ])),
                               SizedBox(
                                 height: 30,
                               ),
                               Container(
-                                decoration: textBox,
-                                height: 40.0,
-                                width: 300.0,
-                                child: TextFormField(
-                                  controller: _confirmPasswordCon,
-                                  obscureText: true,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.only(
-                                        top: 2.0, bottom: 2.0, left: 1.0),
-                                    hintText: 'Confirm Password*',
+                                  child: Column(children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Container(
+                                    child: Text('  Confirm Password'),
                                   ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Confirm Password is required';
-                                    }
-                                    return null;
-                                  },
                                 ),
-                              ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: textBox,
+                                  height: 40.0,
+                                  width: 300.0,
+                                  child: TextFormField(
+                                    controller: _confirmPasswordCon,
+                                    obscureText: true,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                          top: 2.0, bottom: 2.0, left: 1.0),
+                                    ),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Confirm Password is required';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
+                              ])),
                               SizedBox(
                                 height: 50,
                               ),
@@ -468,8 +521,10 @@ class _resSignup1 extends State<resSignup1> {
                                 ),
                                 width: 300.0,
                                 child: RaisedButton(
+                                    color: Colors.blueAccent,
                                     child: Text(
                                       "Next",
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.only(
                                         left: 20,
@@ -584,7 +639,7 @@ class _resSignup2 extends State<resSignup2> {
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
           appBar: AppBar(
-            title: Text('Account Information'),
+            title: Text('Page Information'),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
@@ -603,8 +658,7 @@ class _resSignup2 extends State<resSignup2> {
                 Container(
                   height: double.infinity,
                   child: SingleChildScrollView(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
+                    padding: EdgeInsets.symmetric(horizontal: 40.0),
                     child: new Form(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -615,79 +669,113 @@ class _resSignup2 extends State<resSignup2> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text('Image'),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
                                   Container(
-                                    decoration: textBox,
-                                    height: 40,
-                                    width: 300,
-                                    child: TextFormField(
-                                      controller: _desCon,
-                                      keyboardType: TextInputType.text,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding: EdgeInsets.only(
-                                            top: 2.0, bottom: 2.0, left: 1.0),
-                                        hintText: 'Restaurant Description',
+                                      child: Column(children: <Widget>[
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Container(
+                                        child: Text('  Restaurant Description'),
                                       ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Restaurant Description is Required';
-                                        }
-                                        return null;
-                                      },
                                     ),
-                                  ),
-                                  SizedBox(height: 30),
-                                  Container(
-                                    decoration: textBox,
-                                    height: 40,
-                                    width: 300,
-                                    child: TextFormField(
-                                      controller: _email2Con,
-                                      keyboardType: TextInputType.emailAddress,
-                                      decoration: InputDecoration(
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                      decoration: textBox,
+                                      height: 40,
+                                      width: 300,
+                                      child: TextFormField(
+                                        controller: _desCon,
+                                        keyboardType: TextInputType.text,
+                                        decoration: InputDecoration(
                                           border: InputBorder.none,
                                           contentPadding: EdgeInsets.only(
                                               top: 2.0, bottom: 2.0, left: 1.0),
-                                          hintText: 'Public Email'),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Email is Reqeuired';
-                                        }
-                                        return null;
-                                      },
+                                        ),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Restaurant Description is Required';
+                                          }
+                                          return null;
+                                        },
+                                      ),
                                     ),
-                                  ),
+                                  ])),
+                                  SizedBox(height: 30),
+                                  Container(
+                                      child: Column(children: <Widget>[
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Container(
+                                        child: Text('  Public Email Address'),
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Container(
+                                      decoration: textBox,
+                                      height: 40,
+                                      width: 300,
+                                      child: TextFormField(
+                                        controller: _email2Con,
+                                        keyboardType:
+                                            TextInputType.emailAddress,
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          contentPadding: EdgeInsets.only(
+                                              top: 2.0, bottom: 2.0, left: 1.0),
+                                        ),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Email is Reqeuired';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+                                  ])),
                                   SizedBox(
                                     height: 30,
                                   ),
                                   Container(
-                                    decoration: textBox,
-                                    height: 40,
-                                    width: 300,
-                                    child: TextFormField(
-                                      controller: _contactNumber,
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding: EdgeInsets.only(
-                                            top: 2.0, bottom: 2.0, left: 1.0),
-                                        hintText: 'Contact Number',
+                                      child: Column(children: <Widget>[
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Container(
+                                        child: Text('  Contact Number'),
                                       ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Contact Number is required';
-                                        }
-                                        return null;
-                                      },
                                     ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                      decoration: textBox,
+                                      height: 40,
+                                      width: 300,
+                                      child: TextFormField(
+                                        controller: _contactNumber,
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          contentPadding: EdgeInsets.only(
+                                              top: 2.0, bottom: 2.0, left: 1.0),
+                                        ),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Contact Number is required';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+                                  ])),
+                                  SizedBox(
+                                    height: 30,
                                   ),
                                   Column(
                                     children: <Widget>[
-                                      Text('Type of Cuisine'),
+                                      Row(children: <Widget>[
+                                        Text('Type of Cuisine'),
+                                      ]),
                                       CheckboxListTile(
                                         title: const Text('Filipino'),
                                         value: this.filipino,
@@ -749,7 +837,9 @@ class _resSignup2 extends State<resSignup2> {
                                   ),
                                   Column(
                                     children: <Widget>[
-                                      Text('Delivery Available?'),
+                                      Row(children: <Widget>[
+                                        Text('Delivery Available?'),
+                                      ]),
                                       RadioListTile(
                                         title: const Text('Yes'),
                                         value: Delivery.Yes,
@@ -777,7 +867,9 @@ class _resSignup2 extends State<resSignup2> {
                                   ),
                                   Column(
                                     children: <Widget>[
-                                      Text('Open 24 Hours?'),
+                                      Row(children: <Widget>[
+                                        Text('Open 24 Hours?'),
+                                      ]),
                                       RadioListTile(
                                         title: const Text('Yes'),
                                         value: OpenTime.Yes,
@@ -805,7 +897,9 @@ class _resSignup2 extends State<resSignup2> {
                                   ),
                                   Column(
                                     children: <Widget>[
-                                      Text('Price Range'),
+                                      Row(children: <Widget>[
+                                        Text('Price Range'),
+                                      ]),
                                       RadioListTile(
                                         title: const Text('P'),
                                         value: PriceRange.P,
@@ -844,7 +938,11 @@ class _resSignup2 extends State<resSignup2> {
                                         EdgeInsets.symmetric(vertical: 20.0),
                                     width: 300,
                                     child: RaisedButton(
-                                        child: Text('Upload Photos'),
+                                        color: Colors.blueAccent,
+                                        child: Text(
+                                          'Upload Photos',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
                                         padding: EdgeInsets.only(
                                             left: 20,
                                             right: 20,
@@ -863,7 +961,11 @@ class _resSignup2 extends State<resSignup2> {
                                         EdgeInsets.symmetric(vertical: 20.0),
                                     width: 300,
                                     child: RaisedButton(
-                                      child: Text('Next'),
+                                      color: Colors.blueAccent,
+                                      child: Text(
+                                        'Next',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                       padding: EdgeInsets.only(
                                           left: 20,
                                           right: 20,
