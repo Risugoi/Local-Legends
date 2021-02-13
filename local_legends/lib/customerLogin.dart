@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_legends/openScreen.dart';
 import 'package:local_legends/styles/styles.dart';
 import 'package:local_legends/database/customerdb.dart';
 import 'package:sqflite/sqflite.dart';
@@ -280,168 +281,228 @@ class _customerSignup extends State<customerSignup> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(height: 50.0),
                             Container(
-                              child: Text('logo'),
+                              child: Image.asset(
+                                'assets/images/finalLogo.png',
+                                height: 300,
+                                width: 300,
+                              ),
+                              alignment: Alignment(0, 0),
                             ),
                             SizedBox(
                               height: 50,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _nameCon,
-                                keyboardType: TextInputType.text,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Name',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Name'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Name is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _nameCon,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 2.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Name is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 20,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _contactCon,
-                                keyboardType: TextInputType.phone,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Contact Number',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Contact Number'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Contact Number is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _contactCon,
+                                  keyboardType: TextInputType.phone,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 2.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Contact Number is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 20,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _emailCon,
-                                keyboardType: TextInputType.emailAddress,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Email',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Email'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Email is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _emailCon,
+                                  keyboardType: TextInputType.emailAddress,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Email is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 20,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _bdayCon,
-                                keyboardType: TextInputType.datetime,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Birthday (MM/DD/YYYY)',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Birthday'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Bday is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _bdayCon,
+                                  keyboardType: TextInputType.datetime,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                    hintText: 'MM/DD/YYYY',
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Bday is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 20,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _passwordCon,
-                                obscureText: true,
-                                keyboardType: TextInputType.text,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Password',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Password'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Password is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _passwordCon,
+                                  obscureText: true,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Password is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 20,
                             ),
                             Container(
-                              decoration: textBox,
-                              height: 40,
-                              width: 300,
-                              child: TextFormField(
-                                controller: _confirmPassCon,
-                                obscureText: true,
-                                keyboardType: TextInputType.text,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.only(
-                                      top: 2.0, bottom: 2.0, left: 1.0),
-                                  hintText: 'Confirm Password',
+                                child: Column(children: <Widget>[
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  child: Text('  Confirm Password'),
                                 ),
-                                validator: (value) {
-                                  if (value.isEmpty) {
-                                    return 'Confirm Password is required';
-                                  }
-                                  return null;
-                                },
                               ),
-                            ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: textBox,
+                                height: 40,
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _confirmPassCon,
+                                  obscureText: true,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.only(
+                                        top: 2.0, bottom: 2.0, left: 1.0),
+                                  ),
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Confirm Password is required';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                            ])),
                             SizedBox(
                               height: 50,
                             ),
                             Container(
-                              padding: EdgeInsets.symmetric(vertical: 20.0),
-                              width: 300.0,
+                              width: 170,
+                              height: 40,
                               child: RaisedButton(
-                                child: Text('Submit'),
-                                padding: EdgeInsets.only(
-                                    left: 20, right: 20, top: 10, bottom: 10),
+                                color: Colors.blueAccent,
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(color: Colors.white),
+                                ),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0)),
                                 onPressed: () {

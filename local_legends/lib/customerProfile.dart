@@ -61,6 +61,14 @@ class _customerProfile extends State<customerProfile> {
                             child: Column(
                               children: <Widget>[
                                 Row(children: <Widget>[
+                                  Image.asset(
+                                    'assets/images/profile.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text(
                                     widget.userInfo[0].values
                                         .elementAt(0)
@@ -72,10 +80,22 @@ class _customerProfile extends State<customerProfile> {
                                   height: 20,
                                 ),
                                 Row(children: <Widget>[
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/phone.png',
+                                    width: 30,
+                                    height: 30,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text(
-                                    widget.userInfo[0].values
-                                        .elementAt(4)
-                                        .toString(),
+                                    ' ' +
+                                        widget.userInfo[0].values
+                                            .elementAt(4)
+                                            .toString(),
                                     style: TextStyle(fontSize: 20),
                                   )
                                 ]),
@@ -83,17 +103,37 @@ class _customerProfile extends State<customerProfile> {
                                   height: 20,
                                 ),
                                 Row(children: <Widget>[
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/email.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text(
-                                    widget.userInfo[0].values
-                                        .elementAt(1)
-                                        .toString(),
+                                    ' ' +
+                                        widget.userInfo[0].values
+                                            .elementAt(1)
+                                            .toString(),
                                     style: TextStyle(fontSize: 20),
                                   )
                                 ]),
                                 SizedBox(
-                                  height: 10,
+                                  height: 20,
                                 ),
                                 Row(children: <Widget>[
+                                  Image.asset(
+                                    'assets/images/bday.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text(
                                     widget.userInfo[0].values
                                         .elementAt(2)
