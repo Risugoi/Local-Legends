@@ -1,0 +1,6 @@
+# Referenced at E:\git1\SoftEng-Project\Local-Legends\local_legends\build\app\intermediates\merged_manifests\release\arm64-v8a\AndroidManifest.xml:17
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at E:\git1\SoftEng-Project\Local-Legends\local_legends\build\app\intermediates\merged_manifests\release\arm64-v8a\AndroidManifest.xml:22
+-keep class com.example.local_legends.MainActivity { <init>(); }
+# Referenced at E:\git1\SoftEng-Project\Local-Legends\local_legends\build\app\intermediates\merged_manifests\release\arm64-v8a\AndroidManifest.xml:17
+-keep class io.flutter.app.FlutterApplication { <init>(); }
