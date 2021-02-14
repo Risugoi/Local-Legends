@@ -19,12 +19,13 @@ class merchantReserve extends StatefulWidget {
 class _merchantReserve extends State<merchantReserve> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   int _n;
-
   @override
   Widget build(BuildContext context) {
-    _n = widget.reserveList.length;
-    print(_n);
-    print(widget.reserveList[0].values);
+    if (widget.reserveList?.isEmpty ?? true) {
+      _n = 0;
+    } else {
+      _n = widget.reserveList.length;
+    }
 
     return MaterialApp(
         debugShowCheckedModeBanner: false,

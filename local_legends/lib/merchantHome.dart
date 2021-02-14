@@ -117,10 +117,6 @@ class _merchantHome extends State<merchantHome> {
                                     name: widget.resDetails[0].values
                                         .elementAt(0),
                                     email: widget.email,
-                                    /*
-                                  name: widget.resDetails[0].values
-                                      .elementAt(0)
-                                      */
                                   )));
                     }),
                 ListTile(
@@ -158,8 +154,8 @@ class _merchantHome extends State<merchantHome> {
                       Container(
                         child: Image.asset(
                           'assets/images/$restoName1.png',
-                          height: 220,
-                          width: 750,
+                          height: 230,
+                          width: 770,
                         ),
                       ),
                       SizedBox(height: 20),
