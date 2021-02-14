@@ -43,11 +43,11 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        SizedBox(height: 10),
+                        SizedBox(height: 20),
                         Container(
                           child: Text(
                             widget.name.toString(),
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         SizedBox(height: 20),
@@ -61,7 +61,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Mon',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -90,7 +90,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -113,7 +113,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Tue ',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -142,7 +142,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -165,7 +165,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Wed',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -194,7 +194,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -217,7 +217,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Thu ',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -246,7 +246,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -269,7 +269,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Fri   ',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -298,7 +298,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -321,7 +321,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Sat ',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -350,7 +350,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',
@@ -373,7 +373,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                             children: <Widget>[
                               Text(
                                 '  Sun',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                               SizedBox(
                                 width: 15,
@@ -402,7 +402,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                                 Text('4PM'),
                               ]),
                               SizedBox(
-                                width: 15,
+                                width: 35,
                               ),
                               Image.asset(
                                 'assets/images/edit.png',

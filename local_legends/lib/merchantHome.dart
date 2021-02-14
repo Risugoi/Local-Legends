@@ -24,7 +24,6 @@ class merchantHome extends StatefulWidget {
 
 class _merchantHome extends State<merchantHome> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  //String name, price, time, delivery, address, number, email, description;
 
   List _reserveList = [];
   @override
@@ -154,8 +153,8 @@ class _merchantHome extends State<merchantHome> {
                       Container(
                         child: Image.asset(
                           'assets/images/$restoName1.png',
-                          height: 230,
-                          width: 770,
+                          height: 221,
+                          width: 750,
                         ),
                       ),
                       SizedBox(height: 20),

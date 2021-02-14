@@ -47,7 +47,7 @@ class _customerSettings extends State<customerSettings> {
                           ),
                           Row(children: <Widget>[
                             Text(
-                              'Notifications',
+                              '      Notifications',
                               style: TextStyle(color: Colors.grey),
                             )
                           ]),
@@ -63,7 +63,7 @@ class _customerSettings extends State<customerSettings> {
                               children: <Widget>[
                                 Row(children: <Widget>[
                                   Text(
-                                    'Notifications',
+                                    '  Notifications',
                                     style: TextStyle(fontSize: 20),
                                   ),
                                   SizedBox(
@@ -92,7 +92,7 @@ class _customerSettings extends State<customerSettings> {
                                 SizedBox(height: 5),
                                 Row(children: <Widget>[
                                   Text(
-                                    '[Filler Space]',
+                                    '  [Filler Space]',
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ]),
@@ -109,7 +109,7 @@ class _customerSettings extends State<customerSettings> {
                           SizedBox(height: 50),
                           Row(children: <Widget>[
                             Text(
-                              'Account',
+                              '      Account',
                               style: TextStyle(color: Colors.grey),
                             )
                           ]),
@@ -125,7 +125,7 @@ class _customerSettings extends State<customerSettings> {
                               children: <Widget>[
                                 Row(children: <Widget>[
                                   Text(
-                                    'Change Password',
+                                    '  Change Password',
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ]),
@@ -138,7 +138,7 @@ class _customerSettings extends State<customerSettings> {
                                 SizedBox(height: 5),
                                 Row(children: <Widget>[
                                   Text(
-                                    'Delete Account',
+                                    '  Delete Account',
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ]),
