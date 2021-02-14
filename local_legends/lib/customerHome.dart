@@ -137,10 +137,17 @@ class _customerHome extends State<customerHome> {
           padding: const EdgeInsets.all(10),
           itemCount: _numRes,
           itemBuilder: (context, index) {
+            String restoName = _restaurantInfo[index]
+                    .values
+                    .elementAt(0)
+                    .toString()
+                    .replaceAll(' ', '') +
+                'Logo';
+
             return ListTile(
               contentPadding:
                   EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
-              leading: Image.asset('assets/images/logo.png'),
+              leading: Image.asset('assets/images/$restoName.png'),
               title: Text(_restaurantInfo[index].values.elementAt(0)),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -55,6 +55,7 @@ class _merchantHome extends State<merchantHome> {
             .toString()
             .replaceAll(' ', '') +
         '4';
+    print(restoName1);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
@@ -156,9 +157,9 @@ class _merchantHome extends State<merchantHome> {
                     children: <Widget>[
                       Container(
                         child: Image.asset(
-                          'assets/images/$restoName1.jpg',
-                          height: 200,
-                          width: 600,
+                          'assets/images/$restoName1.png',
+                          height: 220,
+                          width: 750,
                         ),
                       ),
                       SizedBox(height: 20),
@@ -224,8 +225,11 @@ class _merchantHome extends State<merchantHome> {
                               width: 10,
                             ),
                             Container(
-                              child: Text(
-                                  widget.resDetails[0].values.elementAt(2)),
+                              child: Expanded(
+                                child: Text(
+                                  widget.resDetails[0].values.elementAt(2),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -285,18 +289,18 @@ class _merchantHome extends State<merchantHome> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Image.asset(
-                            'assets/images/$restoName2.jpg',
-                            height: 55,
+                            'assets/images/$restoName2.png',
+                            height: 80,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/$restoName3.PNG',
-                            height: 55,
+                            'assets/images/$restoName3.png',
+                            height: 80,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/$restoName4.PNG',
-                            height: 55,
+                            'assets/images/$restoName4.png',
+                            height: 80,
                             width: 80,
                           ),
                         ],

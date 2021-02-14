@@ -391,6 +391,7 @@ class _resSignup1 extends State<resSignup1> {
                                   height: 100.0,
                                   width: 300.0,
                                   child: TextFormField(
+                                    maxLines: null,
                                     controller: _addressCon,
                                     keyboardType: TextInputType.text,
                                     decoration: InputDecoration(
@@ -671,6 +672,7 @@ class _resSignup2 extends State<resSignup2> {
                                 children: <Widget>[
                                   Container(
                                       child: Column(children: <Widget>[
+                                    SizedBox(height: 15),
                                     Align(
                                       alignment: Alignment.topLeft,
                                       child: Container(
@@ -682,9 +684,10 @@ class _resSignup2 extends State<resSignup2> {
                                     ),
                                     Container(
                                       decoration: textBox,
-                                      height: 40,
+                                      height: 100,
                                       width: 300,
                                       child: TextFormField(
+                                        maxLines: null,
                                         controller: _desCon,
                                         keyboardType: TextInputType.text,
                                         decoration: InputDecoration(

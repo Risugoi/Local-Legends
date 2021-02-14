@@ -20,6 +20,26 @@ class _restaurantDisplay extends State<restaurantDisplay> {
 
   @override
   Widget build(BuildContext context) {
+    String restoName1 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '1';
+    String restoName2 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '2';
+    String restoName3 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '3';
+    String restoName4 = widget.resDetails[0].values
+            .elementAt(0)
+            .toString()
+            .replaceAll(' ', '') +
+        '4';
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
@@ -48,7 +68,7 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                     children: <Widget>[
                       Container(
                         child: Image.asset(
-                          'assets/images/logo.png',
+                          'assets/images/$restoName1.png',
                         ),
                       ),
                       SizedBox(height: 20),
@@ -119,8 +139,10 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                               width: 10,
                             ),
                             Container(
-                              child: Text(
-                                  widget.resDetails[0].values.elementAt(2)),
+                              child: Expanded(
+                                child: Text(
+                                    widget.resDetails[0].values.elementAt(2)),
+                              ),
                             ),
                           ],
                         ),
@@ -180,18 +202,18 @@ class _restaurantDisplay extends State<restaurantDisplay> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Image.asset(
-                            'assets/images/logo.png',
-                            height: 55,
+                            'assets/images/$restoName2.png',
+                            height: 80,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/logo.png',
-                            height: 55,
+                            'assets/images/$restoName3.png',
+                            height: 80,
                             width: 80,
                           ),
                           Image.asset(
-                            'assets/images/logo.png',
-                            height: 55,
+                            'assets/images/$restoName4.png',
+                            height: 80,
                             width: 80,
                           ),
                         ],
