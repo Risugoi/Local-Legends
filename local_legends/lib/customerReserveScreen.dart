@@ -21,6 +21,12 @@ class _restoReservation extends State<restoReservation> {
   int _num = 0;
   DateTime selectedDate = DateTime.now();
   String time = '';
+  bool pressed1 = false;
+  bool pressed2 = false;
+  bool pressed3 = false;
+  bool pressed4 = false;
+  bool pressed5 = false;
+  bool pressed6 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -104,10 +110,13 @@ class _restoReservation extends State<restoReservation> {
                             ),
                             Row(
                               children: <Widget>[
-                                RaisedButton(
-                                  onPressed: () => selectDate(context),
-                                  child: Text('Date'),
-                                ),
+                                FlatButton(
+                                    onPressed: () => selectDate(context),
+                                    child: Image.asset(
+                                      'assets/images/calendar.png',
+                                      height: 30,
+                                      width: 30,
+                                    )),
                                 SizedBox(
                                   width: 10,
                                 ),
@@ -134,9 +143,13 @@ class _restoReservation extends State<restoReservation> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed1
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed1 = !pressed1;
                                           time = '10AM';
                                         });
                                       },
@@ -145,9 +158,13 @@ class _restoReservation extends State<restoReservation> {
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed2
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed2 = !pressed2;
                                           time = '11AM';
                                         });
                                       },
@@ -156,9 +173,13 @@ class _restoReservation extends State<restoReservation> {
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed3
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed3 = !pressed3;
                                           time = '1PM';
                                         });
                                       },
@@ -169,9 +190,13 @@ class _restoReservation extends State<restoReservation> {
                                 SizedBox(height: 5),
                                 Row(
                                   children: <Widget>[
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed4
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed4 = !pressed4;
                                           time = '2PM';
                                         });
                                       },
@@ -180,9 +205,13 @@ class _restoReservation extends State<restoReservation> {
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed5
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed5 = !pressed5;
                                           time = '3PM';
                                         });
                                       },
@@ -191,9 +220,13 @@ class _restoReservation extends State<restoReservation> {
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    RaisedButton(
+                                    FlatButton(
+                                      color: pressed6
+                                          ? Colors.blueAccent
+                                          : Colors.white,
                                       onPressed: () {
                                         setState(() {
+                                          pressed6 = !pressed6;
                                           time = '4PM';
                                         });
                                       },

@@ -26,9 +26,6 @@ class _listOfReserve extends State<listOfReserve> {
 
   @override
   Widget build(BuildContext context) {
-    print(_reserveList);
-    print(_n);
-
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new Scaffold(
@@ -53,7 +50,7 @@ class _listOfReserve extends State<listOfReserve> {
                   contentPadding:
                       EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
                   leading: Image.asset('assets/images/logo.png'),
-                  title: Text(_reserveList[index].values.elementAt(0)),
+                  title: Text(_reserveList[index].values.elementAt(0)), //name
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -61,17 +58,50 @@ class _listOfReserve extends State<listOfReserve> {
                           .values
                           .elementAt(4)
                           .toString()
-                          .substring(0, 11)),
-                      Text(_reserveList[index].values.elementAt(5)),
+                          .substring(0, 11)), //date
+                      Text(_reserveList[index].values.elementAt(5)), // time
                     ],
                   ),
                   trailing: RaisedButton(
-                    onPressed: null,
+                    onPressed: () {
+                      _removeReservation(
+                          _reserveList[index].values.elementAt(0).toString(),
+                          _reserveList[index].values.elementAt(4).toString(),
+                          _reserveList[index].values.elementAt(5));
+                      removeReserveation();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => listOfReserve(
+                                    email: widget.email,
+                                  )));
+                    },
                     child: Text('Cancel'),
                   ),
                 );
               },
             )));
+  }
+
+  Widget removeReserveation() {
+    //buttons
+    Widget button = FlatButton(
+        onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
+        child: Text('Continue'));
+
+    //words
+    AlertDialog message = AlertDialog(
+      title: Text('Success'),
+      content: Text('Reservation is cancelled'),
+      actions: [button],
+    );
+
+    //show the box
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return message;
+        });
   }
 
   void info() async {
@@ -83,6 +113,25 @@ class _listOfReserve extends State<listOfReserve> {
       });
     } catch (e) {
       print('error');
+    }
+  }
+
+  _removeReservation(String name, String date, String time) async {
+    String path = p.join(await getDatabasesPath(), customerdb.dbName);
+    var db = await openDatabase(path);
+    List<Map> numRows = await db.rawQuery(
+        "SELECT COUNT (${customerdb.customerEmail}) from ${customerdb.table2}");
+    int getNum = numRows[0].values.elementAt(0);
+    List<Map> results = await db.rawQuery(
+        "SELECT COUNT(*) FROM ${customerdb.table2} WHERE ${customerdb.customerEmail}='${widget.email}'");
+    if (getNum == 0) {
+    } else {
+      int userCount = results[0].values.elementAt(0);
+      if (userCount > 0) {
+        int remove = await db.rawDelete(
+            "DELETE FROM CustomerReservations WHERE RestoName = '$name' AND date = '$date' AND time = '$time'");
+        return remove;
+      }
     }
   }
 
