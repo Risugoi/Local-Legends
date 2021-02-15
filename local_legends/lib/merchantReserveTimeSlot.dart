@@ -418,17 +418,7 @@ class _reserveTimeSlot extends State<reserveTimeSlot> {
                         Divider(
                           color: Colors.black,
                         ),
-                        SizedBox(height: 20),
-                        RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(7)),
-                          onPressed: () {},
-                          child: Text(
-                            'Save Changes',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          color: Colors.blueAccent,
-                        )
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),

@@ -155,15 +155,6 @@ class _merchantSettings extends State<merchantSettings> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 100),
-                          RaisedButton(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7)),
-                            onPressed: () {},
-                            child: Text('Save Changes'),
-                            color: Colors.blueAccent,
-                            textColor: Colors.white,
-                          )
                         ],
                       ),
                     ),

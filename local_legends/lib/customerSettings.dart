@@ -152,15 +152,6 @@ class _customerSettings extends State<customerSettings> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 100),
-                          RaisedButton(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7)),
-                            onPressed: () {},
-                            child: Text('Save Changes'),
-                            color: Colors.blueAccent,
-                            textColor: Colors.white,
-                          )
                         ],
                       ),
                     ),

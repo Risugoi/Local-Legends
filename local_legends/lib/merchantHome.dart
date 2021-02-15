@@ -301,18 +301,6 @@ class _merchantHome extends State<merchantHome> {
                         ],
                       ),
                       SizedBox(height: 40),
-                      Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 20.0, horizontal: 40),
-                          child: RaisedButton(
-                              color: Colors.blueAccent,
-                              child: Text('Edit Page'),
-                              textColor: Colors.white,
-                              padding: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 10),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0)),
-                              onPressed: () {})),
                     ],
                   ))),
                 ),
